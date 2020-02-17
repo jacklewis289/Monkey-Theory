@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="705.0" prefWidth="871.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+    <TableView fx:id="tableData" focusTraversable="false" layoutX="561.0" layoutY="229.0" maxWidth="-Infinity" prefHeight="430.0" prefWidth="296.0">
+      <columns>
+          <TableColumn fx:id="word" prefWidth="75.0" text="Word" />
+          <TableColumn fx:id="testNumber" prefWidth="75.0" text="Test Number" />
+          <TableColumn fx:id="attempts" prefWidth="75.0" text="Attempts" />
+      </columns>
+        <columnResizePolicy>
+          <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+        </columnResizePolicy>
+    </TableView>
+    <Label layoutX="82.0" layoutY="258.0" prefHeight="17.0" prefWidth="126.0" text="I want to find this word" />
+    <Label layoutX="295.0" layoutY="258.0" prefHeight="17.0" prefWidth="88.0" text="this many times" />
+    <TextField fx:id="userWord" layoutX="212.0" layoutY="254.0" prefHeight="25.0" prefWidth="79.0">
+        <tooltip>
+          <Tooltip text="Enter a word" />
+        </tooltip>
+    </TextField>
+    <TextField fx:id="userAmount" layoutX="383.0" layoutY="253.0" prefHeight="27.0" prefWidth="70.0">
+        <tooltip>
+          <Tooltip text="Enter a number" />
+        </tooltip>
+    </TextField>
+    <Button layoutX="478.0" layoutY="254.0" mnemonicParsing="false" onAction="#findAWordGo" prefHeight="25.0" prefWidth="45.0" text="Go" />
+    <Label fx:id="probabilityLabel" layoutX="24.0" layoutY="533.0" text="1 in ">
+        <font>
+          <Font name="System Bold" size="18.0" />
+        </font>
+    </Label>
+    <Label fx:id="highestLabel" layoutX="22.0" layoutY="582.0" text="Highest">
+        <font>
+          <Font name="System Bold" size="18.0" />
+        </font>
+    </Label>
+    <Label fx:id="lowestLabel" layoutX="22.0" layoutY="609.0" text="Lowest">
+        <font>
+          <Font name="System Bold" size="18.0" />
+        </font>
+    </Label>
+    <Label fx:id="averageLabel" layoutX="22.0" layoutY="636.0" text="Average">
+        <font>
+          <Font name="System Bold" size="18.0" />
+        </font>
+    </Label>
+   <Label layoutX="308.0" layoutY="14.0" prefHeight="36.0" prefWidth="290.0" text="Infinite Monkey Theorm" textAlignment="CENTER">
+      <font>
+         <Font name="System Bold" size="25.0" />
+      </font>
+   </Label>
+   <Label layoutX="69.0" layoutY="63.0" prefHeight="59.0" prefWidth="769.0" text="The infinite monkey theorem states that a monkey hitting keys at random on a typewriter keyboard for an infinite amount of time will almost surely type any given text, such as the complete works of William Shakespeare." textAlignment="CENTER" wrapText="true">
+      <font>
+         <Font size="13.0" />
+      </font>
+   </Label>
+   <Label layoutX="69.0" layoutY="136.0" prefHeight="59.0" prefWidth="769.0" text="This program tests that theory by allowing you to enter a word and the amount of times you want the computer to find that word. The computer will then randomly type different letters to the length of the word you have entered when it successfully matches its random word against yours it will append it to the results table" textAlignment="CENTER" wrapText="true">
+      <font>
+         <Font size="13.0" />
+      </font>
+   </Label>
+   <Label layoutX="55.0" layoutY="319.0" prefHeight="17.0" prefWidth="152.0" text="I want to flip a coin and pick" />
+   <ChoiceBox fx:id="headsOrTailsCB" layoutX="212.0" layoutY="314.0" prefHeight="27.0" prefWidth="79.0">
+       <items>
+           <FXCollections fx:factory="observableArrayList">
+               <String fx:value="Heads" />
+               <String fx:value="Tails" />
+           </FXCollections>
+       </items>
+   </ChoiceBox>
+   <Label layoutX="295.0" layoutY="319.0" prefHeight="17.0" prefWidth="88.0" text="this many times" />
+   <TextField fx:id="userAmountHeadsOrTails" layoutX="383.0" layoutY="314.0" prefHeight="27.0" prefWidth="70.0">
+      <tooltip>
+         <Tooltip text="Enter a number" />
+      </tooltip>
+   </TextField>
+   <Button layoutX="478.0" layoutY="314.0" mnemonicParsing="false" onAction="#headsOrTailsGo" prefHeight="25.0" prefWidth="45.0" text="Go" />
+   <Label fx:id="invalidInputLabel" layoutX="206.0" layoutY="406.0" textFill="RED">
+      <font>
+         <Font name="System Bold" size="18.0" />
+      </font>
+   </Label>
+</AnchorPane>
